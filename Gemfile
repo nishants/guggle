@@ -3,13 +3,14 @@ source "http://rubygems.org"
 gem "rack"
 gem "sinatra"
 gem "rake"
+gem 'activerecord'
+gem "thin"
+gem "mysql2"
 
 group :development do
-  gem "thin"
 end
 
 group :test do
-  gem "thin"
   gem "rspec", "~> 1.3"
   gem "rack-test"
 end
