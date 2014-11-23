@@ -1,11 +1,21 @@
-def configure_db()
-	ActiveRecord::Base.establish_connection(
-	  :adapter  => "mysql2",
-	  :host     => "localhost",
-	  :username => "root",
-	  :password => "mysql",
-	  :database => "guggle"
-	)
+require 'yaml'
+
+def db_config_for(environment)
+	_properties_for(environment)["db"]
 end
 
-configure_db()
+def rack_env
+	ENV['RACK_ENV']
+end
+
+def _properties_for(environment)
+	_read_yaml_from(_properties_file)[environment]
+end
+
+def _properties_file
+	File.expand_path(File.dirname(__FILE__) + '/properties.yaml')
+end
+
+def _read_yaml_from(file)
+	YAML.load_file(file)
+end

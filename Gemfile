@@ -6,6 +6,7 @@ gem "rake"
 gem 'activerecord'
 gem "thin"
 gem "mysql2"
+gem 'pry'
 
 group :development do
 end

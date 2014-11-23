@@ -3,11 +3,11 @@ require 'bundler'
 
 Bundler.setup
 
-#
-require File.expand_path("../app",__FILE__)
-
-#
+#set rack_env name
 ENV['RACK_ENV'] ||= 'development'
+
+# run app setup
+require File.expand_path("../setup",__FILE__)
 
 #
 run Application
