@@ -4,7 +4,7 @@ require 'bundler'
 Bundler.setup
 
 #
-require File.expand_path("../lib/application",__FILE__)
+require File.expand_path("../app",__FILE__)
 
 #
 ENV['RACK_ENV'] ||= 'development'
