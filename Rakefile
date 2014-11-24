@@ -29,7 +29,6 @@ Spec::Rake::SpecTask.new('spec') do |t|
 end
 
 namespace :thin do
-
   task :start do
     puts "Thin starting at #{THIN_OPTIONS[:address]}:#{THIN_OPTIONS[:port]}, logging to #{THIN_OPTIONS[:log]}"
     FileUtils.mkdir_p('log')
@@ -44,6 +43,5 @@ namespace :thin do
     controller = Thin::Controllers::Controller.new(THIN_OPTIONS)
     controller.stop
   end
-
 end
 
