@@ -1,8 +1,7 @@
 class Application < Sinatra::Base
 
   get "/pages" do
-    Page.all().to_json
-    # halt It.works!
+    Search.by_query(params[:query], Page.all).to_json
   end
 
 end
